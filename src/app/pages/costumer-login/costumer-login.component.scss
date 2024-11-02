@@ -2,18 +2,19 @@
   font-family: monospace;
 }
 .header-container{
-  display: block;
+  display: flex;
+  align-items: center;
   background-color: #002855;
   width: 100%;
   color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  height: 50px;
 }
 
-.header-container h1 {
-  display: inline ;
-  margin:0;
-  padding: 0;
-  text-align: center;
-}
+.title-one{margin-left: 20px;}
+.title-two{ color: #FFB800; }
+
 
 .login-container {
   display: flex;
@@ -24,17 +25,22 @@
 }
 
 .login-box {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 300px;
+  width: 400px;
+  position: relative;
+  bottom: 50px;
 }
 
 .logo {
   max-width: 300px;
-  margin-bottom: 1.5rem;
+  height: 200px;
+  margin-bottom: 2rem;
+  border-radius: 20px;
+  object-fit: cover;
 }
 
 .input-group {
