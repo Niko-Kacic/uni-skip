@@ -13,15 +13,17 @@ export class CostumerLoginComponent {
   constructor(private router: Router) {}
 
   login() {
-    
     if (this.email === 'and.cruz@duocuc.cl' && this.password === '123456') {
-      
       this.email = '';
       this.password = '';
       this.router.navigate(['/store-selection']);
     } else {
-      
       alert('Usuario o contraseña incorrectos');
     }
+  }
+
+  forgotPassword() {
+    // Redirige al componente forgot-password
+    this.router.navigate(['/forgot-password']);
   }
 }

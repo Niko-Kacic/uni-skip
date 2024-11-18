@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { CostumerLoginComponent } from './pages/costumer-login/costumer-login.component';
 import { StoreSelectionComponent } from './pages/store-selection/store-selection.component';
 import { MenuComponent } from './pages/menu/menu.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CostumerLoginComponent,
     StoreSelectionComponent,
-    MenuComponent
+    MenuComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
