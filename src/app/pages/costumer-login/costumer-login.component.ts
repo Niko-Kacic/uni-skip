@@ -23,7 +23,6 @@ export class CostumerLoginComponent {
   }
 
   forgotPassword() {
-    // Redirige al componente forgot-password
     this.router.navigate(['/forgot-password']);
   }
 }
