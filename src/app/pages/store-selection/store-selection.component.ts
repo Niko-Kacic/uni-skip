@@ -11,7 +11,6 @@ export class StoreSelectionComponent {
   constructor(private router: Router) {}
 
   goToMenu(storeId: string) {
-    
-    this.router.navigate(['/menu', storeId]);
+    this.router.navigate(['/menu', storeId]); 
   }
 }
