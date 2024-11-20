@@ -11,6 +11,15 @@ export class ForgotPasswordComponent {
 
   constructor(private router: Router) {}
 
+  welcomePage() {
+    this.router.navigate(['/welcome-page']);
+  }
+
+  goBack() {
+    this.router.navigate(['/login']); // Cambia según tus rutas
+  }
+
+  
   reset() {
     const emailPattern = /^[a-zA-Z0-9._%+-]+@duocuc\.cl$/;
 
