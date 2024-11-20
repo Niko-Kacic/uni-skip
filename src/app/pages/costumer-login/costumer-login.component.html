@@ -1,14 +1,15 @@
-<div class="header-container"></div>
+<div class="header-container">
+  <div class="header-content">
+    <a (click)="welcomePage()" class="header-title">Uni-Skip</a>
+  </div>
+</div>
 
 <div class="main-content">
   <div class="login-container">
     <h2 class="login-title">Iniciar Sesión</h2>
     
     <div class="login-box">
-      <img src="assets/Uni-Skip-Large.png" alt="Uni-Skip Logo" class="logo">
-      
       <form (ngSubmit)="login()">
-
         <div class="input-group">
           <label for="email">Correo institucional</label>
           <input
@@ -32,19 +33,10 @@
         </div>
 
         <button type="submit" class="login-btn">Iniciar Sesión</button>
-
         <a (click)="forgotPassword()" class="forgot-password">¿Olvidaste tu contraseña?</a>
-
       </form>
     </div>
   </div>
 </div>
 
-<footer class="footer-container">
-  <p>&copy; 2024 Uni-Skip. Todos los derechos reservados.</p>
-  <div class="footer-links">
-    <a href="#">Ayuda</a>
-    <a href="#">Términos</a>
-    <a href="#">Contacto</a>
-  </div>
-</footer>
+
