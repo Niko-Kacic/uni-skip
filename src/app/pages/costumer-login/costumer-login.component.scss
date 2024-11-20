@@ -9,7 +9,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(90deg, #002855, #004080); 
+  background: linear-gradient(90deg, #002855, #004080);
   padding: 1rem 2rem;
   position: fixed;
   top: 0;
@@ -19,14 +19,27 @@
   z-index: 1000;
 }
 
+.header-title {
+  font-size: 1.8rem;
+  color: #FFCD00;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.header-title:hover {
+  color: #FFD633;
+  transform: scale(1.1);
+}
+
 .main-content {
-  flex: 1;
-  margin-top: 35px; 
-  margin-bottom: 90px; 
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   padding: 1rem;
+  background-color: #f9f9f9;
 }
 
 .login-container {
@@ -44,29 +57,17 @@
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 3px;
-  margin-top: 0;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .login-box {
   background-color: white;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 10px;
-  border: 3px solid #002855;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 350px;
   text-align: center;
-  width: 100%;
-  max-width: 300px;
-}
-
-.logo {
-  width: 100%;
-  height: auto;
-  border: 2px solid #002855;
-  border-radius: 10px;
-  padding: 5px;
-  background-color: #FFCD00;
-  margin-bottom: 1rem;
 }
 
 .input-group {
@@ -80,7 +81,6 @@
   font-weight: bold;
   color: #002855;
   font-size: 1rem;
-  transition: color 0.3s ease;
 }
 
 .input-group input {
@@ -90,36 +90,28 @@
   border-radius: 10px;
   font-size: 1rem;
   background-color: #f9f9f9;
-  transition: border 0.3s ease;
 }
 
 .input-group input:focus {
   border-color: #FFCD00;
 }
 
-.input-group input::placeholder {
-  color: #aaa;
-  font-size: 0.9rem;
-}
-
 .login-btn {
   background-color: #FFCD00;
   color: #002855;
-  border: 2px solid #002855;
+  border: none;
   border-radius: 10px;
   padding: 0.75rem 1rem;
   font-size: 1rem;
   cursor: pointer;
   width: 100%;
   font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .login-btn:hover {
   background-color: #FFD633;
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .forgot-password {
@@ -141,37 +133,5 @@
   text-decoration: none;
   transform: translateY(-2px);
   border-color: #FFCD00;
-}
-
-.footer-container {
-  background: linear-gradient(90deg, #004080, #002855); 
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-  z-index: 1000;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.footer-links {
-  margin-top: 1rem;
-}
-
-.footer-links a {
-  color: #FFCD00;
-  text-decoration: none;
-  margin: 0 0.75rem;
-  font-weight: 500;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-  color: #FFD633;
 }
 

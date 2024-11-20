@@ -12,6 +12,10 @@ export class CostumerLoginComponent {
 
   constructor(private router: Router) {}
 
+  welcomePage() {
+    this.router.navigate(['/welcome-page']);
+  }
+
   login() {
     if (this.email === 'and.cruz@duocuc.cl' && this.password === '123456') {
       this.email = '';

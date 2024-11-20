@@ -8,6 +8,7 @@ import { CostumerLoginComponent } from './pages/costumer-login/costumer-login.co
 import { StoreSelectionComponent } from './pages/store-selection/store-selection.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
     CostumerLoginComponent,
     StoreSelectionComponent,
     MenuComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    WelcomePageComponent
   ],
   imports: [
     BrowserModule,
