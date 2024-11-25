@@ -9,6 +9,7 @@ import { StoreSelectionComponent } from './pages/store-selection/store-selection
 import { MenuComponent } from './pages/menu/menu.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     StoreSelectionComponent,
     MenuComponent,
     ForgotPasswordComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

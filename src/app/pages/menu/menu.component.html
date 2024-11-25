@@ -10,8 +10,12 @@
         <h2 class="product-name">{{ product.name }}</h2>
         <p class="product-description">{{ product.description }}</p>
         <p class="product-price"><strong>Precio:</strong> ${{ product.price }}</p>
+        <button (click)="addToCart(product)">+</button>
+        <button (click)="removeFromCart(product)">-</button>
       </div>
     </section>
+
+    <a routerLink="/cart">Ver Carrito</a>
   
     <ng-template #noProducts>
       <p>No hay productos disponibles para esta tienda.</p>

@@ -65,3 +65,19 @@
     margin: 8px 0 0;
   }
   
+  button {
+    font-size: 1.2em;   // Tamaño de la fuente
+    width: 30px;        // Ancho fijo para que sean cuadrados
+    height: 30px;
+    margin: 5px;        // Espaciado
+    border-radius: 50%; // Forma redonda
+    background-color: #4CAF50;  // Color de fondo para el botón +
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:last-child {  // Botón -
+    background-color: #F44336;  // Color rojo para restar
+  }
+  

@@ -5,7 +5,7 @@ import { StoreSelectionComponent } from './pages/store-selection/store-selection
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { MenuComponent } from './pages/menu/menu.component'; 
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
-
+import { CartComponent } from './pages/cart/cart.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'store-selection', component: StoreSelectionComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent},
   { path: 'menu/:storeId', component: MenuComponent }, 
-  { path: 'welcome-page', component: WelcomePageComponent}
+  { path: 'welcome-page', component: WelcomePageComponent},
+  { path: 'cart', component: CartComponent },
 ];
 
 @NgModule({

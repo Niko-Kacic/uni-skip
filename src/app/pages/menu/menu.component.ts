@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import { CartService } from '../../service/cart.service';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -37,7 +37,10 @@ export class MenuComponent implements OnInit {
     }
   ];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private cartService: CartService
+  ) {}
 
   ngOnInit() {
     
@@ -53,4 +56,14 @@ export class MenuComponent implements OnInit {
       console.log('No se encontró la tienda seleccionada.');
     }
   }
+
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
+  }
+
+  removeFromCart(product: any) {
+    this.cartService.removeFromCart(product);
+  }
+
+  
 }
