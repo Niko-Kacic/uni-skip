@@ -16,17 +16,16 @@
   <header class="menu-title">
     <h1>Menú de {{ storeName }}</h1>
   </header>
-  
+
   <section class="product-list" *ngIf="products.length > 0; else noProducts">
     <div class="product-card" *ngFor="let product of products">
-      <h2 class="product-name">{{ product.name }}</h2>
-      <p class="product-description">{{ product.description }}</p>
-      <p class="product-price"><strong>Precio:</strong> ${{ product.price }}</p>
+      <h2 class="product-name">{{ product.nombre }}</h2>
+      <p class="product-description">{{ product.descripcion }}</p>
+      <p class="product-price"><strong>Precio:</strong> ${{ product.valor }}</p>
     </div>
   </section>
-  
+
   <ng-template #noProducts>
     <p>No hay productos disponibles para esta tienda.</p>
-  </ng-template>  
+  </ng-template>
 </div>
-  

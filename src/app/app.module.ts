@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'; // Asegúrate de importar HttpClientModule
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +14,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { ProfileComponent } from './pages/profile/profile.component';
-import { BackendService } from './services/backend.service'; // Asegúrate de importar BackendService
+import { BackendService } from './services/backend.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { BackendService } from './services/backend.service'; // Asegúrate de im
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule  // Agrega HttpClientModule aquí
+    HttpClientModule
   ],
   providers: [BackendService],
   bootstrap: [AppComponent]
