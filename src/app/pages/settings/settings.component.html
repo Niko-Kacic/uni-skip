@@ -1,0 +1,44 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+
+<div class="header-container">
+  <div class="header-content">
+    <a class="header-title" (click)="goToMenu()">Uni-Skip</a>
+    <div class="header-icons">
+      <i class="fas fa-question-circle" title="Ayuda"></i>
+      <i class="fas fa-cog" title="Configuración"></i>
+      <i class="fas fa-user" title="Perfil" (click)="goToProfile()"></i>
+      <i class="fas fa-shopping-cart" title="Carrito de Compras" (click)="goToShoppingCart()"></i>
+    </div>
+  </div>
+</div>
+
+<div class="settings-container">
+    <h1 class="settings-title">Configuración</h1>
+    <div class="settings-list">
+      <div class="setting-item">
+        <i class="fas fa-sun"></i>
+        <span class="setting-text">Modo Claro/Oscuro</span>
+      </div>
+      <div class="setting-item">
+        <i class="fas fa-bell"></i>
+        <span class="setting-text">Notificaciones</span>
+      </div>
+      <div class="setting-item">
+        <i class="fas fa-language"></i>
+        <span class="setting-text">Idioma</span>
+      </div>
+      <div class="setting-item">
+        <i class="fas fa-cogs"></i>
+        <span class="setting-text">Preferencias de la Cuenta</span>
+      </div>
+      <div class="setting-item">
+        <i class="fas fa-lock"></i>
+        <span class="setting-text">Cambiar Contraseña</span>
+      </div>
+      <div class="setting-item">
+        <i class="fas fa-sign-out-alt"></i>
+        <span class="setting-text" (click)="logout()">Cerrar Sesión</span>
+      </div>
+    </div>
+  </div>
+  

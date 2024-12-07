@@ -1,20 +1,32 @@
-<div class="header-container"></div>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+
+<div class="header-container">
+  <div class="header-content">
+    <a class="header-title">Uni-Skip</a>
+    <div class="header-icons">
+      <i class="fas fa-question-circle" title="Ayuda"></i>
+      <i class="fas fa-cog" title="Configuración" (click)="goToSettings()"></i>
+      <i class="fas fa-user" title="Perfil" (click)="goToProfile()"></i>
+      <i class="fas fa-shopping-cart" title="Carrito de Compras" (click)="goToShoppingCart()"></i>
+    </div>
+  </div>
+</div>
 
 <div class="menu-container">
-    <header class="menu-header">
-      <h1>Menú de {{ storeName }}</h1>
-    </header>
+  <header class="menu-title">
+    <h1>Menú de {{ storeName }}</h1>
+  </header>
   
-    <section class="product-list" *ngIf="products.length > 0; else noProducts">
-      <div class="product-card" *ngFor="let product of products">
-        <h2 class="product-name">{{ product.name }}</h2>
-        <p class="product-description">{{ product.description }}</p>
-        <p class="product-price"><strong>Precio:</strong> ${{ product.price }}</p>
-      </div>
-    </section>
+  <section class="product-list" *ngIf="products.length > 0; else noProducts">
+    <div class="product-card" *ngFor="let product of products">
+      <h2 class="product-name">{{ product.name }}</h2>
+      <p class="product-description">{{ product.description }}</p>
+      <p class="product-price"><strong>Precio:</strong> ${{ product.price }}</p>
+    </div>
+  </section>
   
-    <ng-template #noProducts>
-      <p>No hay productos disponibles para esta tienda.</p>
-    </ng-template>
-  </div>
+  <ng-template #noProducts>
+    <p>No hay productos disponibles para esta tienda.</p>
+  </ng-template>  
+</div>
   

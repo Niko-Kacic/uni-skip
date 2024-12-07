@@ -1,0 +1,152 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, #002855, #004080);
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+  }  
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+  }
+
+  .header-title {
+    font-size: 1.8rem;
+    color: #FFCD00;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .header-title:hover {
+    color: #FFD633;
+    transform: scale(1.1);
+  }
+  
+  .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem;
+    background-color: #f9f9f9;
+  }  
+  
+  .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .register-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #002855;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  .register-box {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+  }
+  
+  .input-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  .input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #002855;
+    font-size: 1rem;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+  }
+  
+  .input-group input:focus {
+    border-color: #FFCD00;
+  }
+
+  .error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+  
+  .register-btn {
+    background-color: #FFCD00;
+    color: #002855;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .register-btn:hover {
+    background-color: #FFD633;
+    transform: scale(1.05);
+  }
+
+  .login-link {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #002855;
+    text-align: center;
+  }
+  
+  .login-btn {
+    font-weight: bold;
+    color: #FFCD00;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    color: #FFD633;
+    text-decoration: underline;
+    transform: scale(1.05);
+  }
+  
+  

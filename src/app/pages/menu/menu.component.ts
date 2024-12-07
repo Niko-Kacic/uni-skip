@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-menu',
@@ -23,21 +25,21 @@ export class MenuComponent implements OnInit {
       storeId: 'Menu-Paradiso Café',
       storeName: 'Paradiso Café',
       products: [
-        { name: 'Cruzadito de Chocolate', description: 'Masa de hoja rellena con chocolate.', price: 2500 },
-        { name: 'Cruzadito de Crema', description: 'Masa de hoja rellena con crema.', price: 2400 }
+        { name: 'Cruzadito de Chocolate', description: 'Masa de hoja rellena con chocolate.', price: 1500 },
+        { name: 'Cruzadito de Crema', description: 'Masa de hoja rellena con crema.', price: 1500 }
       ]
     },
     {
       storeId: 'Menu-Achoclonados',
       storeName: 'Achoclonados',
       products: [
-        { name: 'Coca Cola en lata', description: 'Refresco Coca Cola en lata de 350ml.', price: 900 },
-        { name: 'Pepsi en lata', description: 'Refresco Pepsi en lata de 350ml.', price: 850 }
+        { name: 'Coca Cola en lata', description: 'Refresco Coca Cola en lata de 350ml.', price: 1100 },
+        { name: 'Pepsi en lata', description: 'Refresco Pepsi en lata de 350ml.', price: 1100 }
       ]
     }
   ];
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private router: Router, private cartService: CartService) {}
 
   ngOnInit() {
     
@@ -52,5 +54,24 @@ export class MenuComponent implements OnInit {
     } else {
       console.log('No se encontró la tienda seleccionada.');
     }
+  }
+
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
+  }
+  removeFromCart(product: any) {
+    this.cartService.removeFromCart(product);
+  }
+
+  goToSettings() {
+    this.router.navigate(['/settings']);
+  }
+
+  goToShoppingCart() {
+    this.router.navigate(['/shopping-cart']);
+  }
+
+  goToProfile() {
+    this.router.navigate(['/profile']);
   }
 }

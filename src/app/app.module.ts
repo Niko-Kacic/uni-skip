@@ -8,7 +8,11 @@ import { CostumerLoginComponent } from './pages/costumer-login/costumer-login.co
 import { StoreSelectionComponent } from './pages/store-selection/store-selection.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
-import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,11 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     StoreSelectionComponent,
     MenuComponent,
     ForgotPasswordComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    RegisterComponent,
+    ShoppingCartComponent,
+    SettingsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

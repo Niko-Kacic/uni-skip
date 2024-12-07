@@ -19,6 +19,13 @@
   z-index: 1000;
 }
 
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; 
+}
+
 .header-title {
   font-size: 1.8rem;
   color: #FFCD00;
@@ -133,5 +140,26 @@
   text-decoration: none;
   transform: translateY(-2px);
   border-color: #FFCD00;
+}
+
+.register-link {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #002855;
+  text-align: center;
+}
+
+.register-btn {
+  font-weight: bold;
+  color: #FFCD00;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.register-btn:hover {
+  color: #FFD633;
+  text-decoration: underline;
+  transform: scale(1.05);
 }
 
