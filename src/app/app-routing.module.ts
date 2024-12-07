@@ -8,23 +8,30 @@ import { WelcomePageComponent } from './pages/welcome-page/welcome-page.componen
 import { RegisterComponent } from './pages/register/register.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { SettingsComponent } from './pages/settings/settings.component';
-import  { ProfileComponent } from './pages/profile/profile.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { StoreComponent } from './pages/store/store.component';
+
+// Guards
+import { AuthGuard } from './guards/auth.guard';
+import { GuestGuard } from './guards/guest.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: CostumerLoginComponent },
-  { path: 'store-selection', component: StoreSelectionComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent},
-  { path: 'menu/:storeId', component: MenuComponent },
-  { path: 'welcome-page', component: WelcomePageComponent},
-  { path: 'register', component: RegisterComponent },
-  { path: 'shopping-cart', component: ShoppingCartComponent},
-  { path: 'settings', component: SettingsComponent},
-  { path: 'profile', component: ProfileComponent}
+  { path: 'login', component: CostumerLoginComponent, canActivate: [GuestGuard] },
+  { path: 'register', component: RegisterComponent, canActivate: [GuestGuard] },
+  { path: 'forgot-password', component: ForgotPasswordComponent, canActivate: [GuestGuard] },
+  { path: 'store', component: StoreComponent, canActivate: [AuthGuard] },
+  { path: 'store-selection', component: StoreSelectionComponent, canActivate: [AuthGuard] },
+  { path: 'menu/:storeId', component: MenuComponent, canActivate: [AuthGuard] },
+  { path: 'welcome-page', component: WelcomePageComponent, canActivate: [AuthGuard] },
+  { path: 'shopping-cart', component: ShoppingCartComponent, canActivate: [AuthGuard] },
+  { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: '/login' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

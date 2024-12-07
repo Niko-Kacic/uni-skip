@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-costumer-login',
@@ -10,20 +11,25 @@ export class CostumerLoginComponent {
   email: string = '';
   password: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
   welcomePage() {
     this.router.navigate(['/welcome-page']);
   }
 
   login() {
-    if (this.email === 'and.cruz@duocuc.cl' && this.password === '123456') {
-      this.email = '';
-      this.password = '';
-      this.router.navigate(['/store-selection']);
-    } else {
-      alert('Usuario o contraseña incorrectos');
-    }
+    const credentials = { email: this.email, password: this.password };
+    this.authService.login(credentials).subscribe({
+      next: (response: any) => {
+        alert('Inicio de sesión exitoso');
+        localStorage.setItem('token', response.token); // Guardar token en localStorage
+        this.router.navigate(['/store-selection']); // Redirigir a la selección de tienda
+      },
+      error: (error: any) => {
+        alert('Usuario o contraseña incorrectos');
+        console.error(error);
+      },
+    });
   }
 
   forgotPassword() {

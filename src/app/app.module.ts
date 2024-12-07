@@ -15,6 +15,7 @@ import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.compo
 import { SettingsComponent } from './pages/settings/settings.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { BackendService } from './services/backend.service';
+import { StoreComponent } from './pages/store/store.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BackendService } from './services/backend.service';
     RegisterComponent,
     ShoppingCartComponent,
     SettingsComponent,
-    ProfileComponent
+    ProfileComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,

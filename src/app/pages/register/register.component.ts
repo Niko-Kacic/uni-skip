@@ -1,40 +1,54 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
-  email: string = '';
-  password: string = '';
-  confirmPassword: string = '';
-  passwordMismatch: boolean = false;
+  user = {
+    rut: '',
+    dv_rut: '',
+    nombre: '',
+    apellido: '',
+    email: '',
+    password: '',
+  };
+  confirmPassword = '';
+  passwordMismatch = false;
 
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnChanges() {
-    this.passwordMismatch = this.password !== this.confirmPassword;
+  validatePasswords() {
+    this.passwordMismatch = this.user.password !== this.confirmPassword;
   }
 
   register() {
+    this.validatePasswords();
     if (this.passwordMismatch) {
-      alert('Las contraseñas no coinciden.');
+      alert('Las contraseñas no coinciden');
       return;
     }
 
-    console.log('Correo:', this.email);
-    console.log('Contraseña:', this.password);
-
-    this.router.navigate(['/login']);
-  }
-
-  welcomePage() {
-    this.router.navigate(['/welcome']); 
+    this.authService.register(this.user).subscribe({
+      next: (response: any) => {
+        alert('Registro exitoso');
+        this.router.navigate(['/costumer-login']);
+      },
+      error: (error: any) => {
+        alert('Error en el registro: ' + error.error.message);
+        console.error(error);
+      },
+    });
   }
 
   navigateToLogin() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/costumer-login']);
+  }
+
+  welcomePage() {
+    this.router.navigate(['/welcome-page']);
   }
 }

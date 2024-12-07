@@ -13,32 +13,28 @@
 </div>
 
 <div class="profile-container">
-    <div class="profile-header">
-      <h1 class="profile-title">Perfil de Usuario</h1>
+  <div class="profile-header">
+    <h1 class="profile-title">Perfil de Usuario</h1>
+  </div>
+  <div class="profile-info">
+    <div class="profile-item">
+      <i class="fas fa-user"></i>
+      <span class="profile-text">Nombre: {{ user.nombre }}</span>
     </div>
-    <div class="profile-info">
-      <div class="profile-item">
-        <i class="fas fa-user"></i>
-        <span class="profile-text">Nombre: </span>
-      </div>
-      <div class="profile-item">
-        <i class="fas fa-envelope"></i>
-        <span class="profile-text">Apellido: </span>
-      </div>
-      <div class="profile-item">
-        <i class="fas fa-phone"></i>
-        <span class="profile-text">Nombre de usuario: </span>
-      </div>
-      <div class="profile-item">
-        <i class="fas fa-map-marker-alt"></i>
-        <span class="profile-text">Correo Institucional: </span>
-      </div>
-      <div class="profile-item">
-        <i class="fas fa-calendar-alt"></i>
-        <span class="profile-text">Fecha de nacimiento: </span>
-      </div>
+    <div class="profile-item">
+      <i class="fas fa-envelope"></i>
+      <span class="profile-text">Apellido: {{ user.apellido }}</span>
     </div>
-    <div class="profile-actions">
-      <button class="btn-edit">Editar Perfil</button>
+    <div class="profile-item">
+      <i class="fas fa-user-tag"></i>
+      <span class="profile-text">RUT: {{ user.rut }}-{{ user.dv_rut }}</span>
+    </div>
+    <div class="profile-item">
+      <i class="fas fa-envelope"></i>
+      <span class="profile-text">Correo Institucional: {{ user.email }}</span>
     </div>
   </div>
+  <div class="profile-actions">
+    <button class="btn-edit">Editar Perfil</button>
+  </div>
+</div>

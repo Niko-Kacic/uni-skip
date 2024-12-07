@@ -5,7 +5,12 @@
 
   <div class="stores">
     <div *ngFor="let store of stores" class="store-card" (click)="goToMenu(store.id_tienda)">
-      <img [src]="store.logo" [alt]="'Logo ' + store.nombre" class="store-logo">
+      <img
+        [src]="store.logo"
+        [alt]="'Logo ' + store.nombre"
+        class="store-logo"
+        (error)="store.logo = 'assets/default-logo.png'" ><!-- Manejador de error -->
+      
       <p class="store-name">{{ store.nombre }}</p>
     </div>
   </div>

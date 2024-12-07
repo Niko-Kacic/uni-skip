@@ -1,58 +1,115 @@
 <div class="header-container">
-    <div class="header-content">
-      <a (click)="welcomePage()" class="header-title">Uni-Skip</a>
-    </div>
+  <div class="header-content">
+    <a (click)="welcomePage()" class="header-title">Uni-Skip</a>
   </div>
-  
-  <div class="main-content">
-    <div class="register-container">
-      <h2 class="register-title">Registrarse</h2>
-      <div class="register-box">
-        <form (ngSubmit)="register()">
-          <div class="input-group">
-            <label for="email">Correo institucional</label>
-            <input
-              type="text"
-              id="email"
-              placeholder="@duocuc.cl"
-              required
-              [(ngModel)]="email"
-              name="email">
-          </div>
-  
-          <div class="input-group">
-            <label for="password">Contraseña</label>
-            <input 
-              type="password" 
-              id="password" 
-              placeholder="**********" 
-              required 
-              [(ngModel)]="password" 
-              name="password">
-          </div>
-  
-          <div class="input-group">
-            <label for="confirmPassword">Confirmar contraseña</label>
-            <input 
-              type="password" 
-              id="confirmPassword" 
-              placeholder="**********" 
-              required 
-              [(ngModel)]="confirmPassword" 
-              name="confirmPassword">
-          </div>
-  
-          <p *ngIf="passwordMismatch" class="error-message">Las contraseñas no coinciden</p>
-  
-          <button type="submit" class="register-btn" [disabled]="passwordMismatch">Registrarse</button>
-        </form>
-      </div>
+</div>
 
-      <div class="login-link">
-        <p>¿Ya tienes una cuenta? 
-            <a (click)="navigateToLogin()" class="login-btn">Inicia sesión aquí</a>
+<div class="main-content">
+  <div class="register-container">
+    <h2 class="register-title">Registrarse</h2>
+    <div class="register-box">
+      <form (ngSubmit)="register()">
+        <div class="input-group">
+          <label for="rut">RUT</label>
+          <input
+            type="text"
+            id="rut"
+            placeholder="12345678"
+            required
+            [(ngModel)]="user.rut"
+            name="rut"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="dv_rut">Dígito Verificador</label>
+          <input
+            type="text"
+            id="dv_rut"
+            placeholder="9"
+            required
+            [(ngModel)]="user.dv_rut"
+            name="dv_rut"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="nombre">Nombre</label>
+          <input
+            type="text"
+            id="nombre"
+            placeholder="Nombre"
+            required
+            [(ngModel)]="user.nombre"
+            name="nombre"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="apellido">Apellido</label>
+          <input
+            type="text"
+            id="apellido"
+            placeholder="Apellido"
+            required
+            [(ngModel)]="user.apellido"
+            name="apellido"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="email">Correo Institucional</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="@duocuc.cl"
+            required
+            [(ngModel)]="user.email"
+            name="email"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="password">Contraseña</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="**********"
+            required
+            [(ngModel)]="user.password"
+            name="password"
+            (input)="validatePasswords()"
+          />
+        </div>
+
+        <div class="input-group">
+          <label for="confirmPassword">Confirmar Contraseña</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            placeholder="**********"
+            required
+            [(ngModel)]="confirmPassword"
+            name="confirmPassword"
+            (input)="validatePasswords()"
+          />
+        </div>
+
+        <p *ngIf="passwordMismatch" class="error-message">
+          Las contraseñas no coinciden
         </p>
+
+        <button type="submit" class="register-btn" [disabled]="passwordMismatch">
+          Registrarse
+        </button>
+      </form>
     </div>
+
+    <div class="login-link">
+      <p>
+        ¿Ya tienes una cuenta?
+        <a (click)="navigateToLogin()" class="login-btn">Inicia sesión aquí</a>
+      </p>
     </div>
   </div>
-  
+</div>
