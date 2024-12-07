@@ -4,7 +4,7 @@
   <h2 class="selection-title">Selecciona una tienda</h2>
 
   <div class="stores">
-    <div *ngFor="let store of stores" class="store-card" (click)="goToMenu(store.nombre)">
+    <div *ngFor="let store of stores" class="store-card" (click)="goToMenu(store.id_tienda)">
       <img [src]="store.logo" [alt]="'Logo ' + store.nombre" class="store-logo">
       <p class="store-name">{{ store.nombre }}</p>
     </div>

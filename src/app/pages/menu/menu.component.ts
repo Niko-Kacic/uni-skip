@@ -26,12 +26,13 @@ export class MenuComponent implements OnInit {
 
   loadProducts(): void {
     const storeIdNumber = parseInt(this.storeId, 10);
+    console.log('ID de tienda para la consulta:', storeIdNumber); // Agregar mensaje de depuración
     this.backendService.getProductsByStore(storeIdNumber).subscribe(
       data => {
         console.log('Productos obtenidos desde el servidor:', data.products);
         this.products = data.products;
         if (this.products.length > 0) {
-          this.storeName = this.products[0].id_tienda;
+          this.storeName = this.products[0].nombre;
         } else {
           this.storeName = 'Tienda';
         }

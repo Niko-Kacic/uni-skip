@@ -28,7 +28,7 @@ export class StoreSelectionComponent implements OnInit {
     );
   }
 
-  goToMenu(storeName: string) {
-    this.router.navigate(['/menu', storeName]);
+  goToMenu(storeId: number) {
+    this.router.navigate(['/menu', storeId]);
   }
 }
