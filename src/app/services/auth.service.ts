@@ -10,20 +10,24 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
+  // Registrar usuario
   register(user: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/register`, user);
   }
 
+  // Iniciar sesión
   login(credentials: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/login`, credentials);
   }
 
+  // Cerrar sesión
   logout(): Observable<any> {
     return this.http.post(`${this.baseUrl}/logout`, {});
   }
 
+  // Obtener perfil del usuario
   getProfile(): Observable<any> {
-    const token = localStorage.getItem('token'); // Recupera el token almacenado
+    const token = localStorage.getItem('token'); // Recuperar el token almacenado
     const headers = new HttpHeaders({
       Authorization: `Bearer ${token}`,
     });

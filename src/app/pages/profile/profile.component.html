@@ -38,3 +38,70 @@
     <button class="btn-edit">Editar Perfil</button>
   </div>
 </div>
+
+<!-- Pedidos Actuales -->
+<div *ngIf="currentOrders.length > 0" class="orders-container">
+  <h2 class="orders-title">Pedidos Actuales</h2>
+
+  <div *ngFor="let order of currentOrders" class="order-status-container">
+    <h3 class="order-id">Pedido #{{ order.id_pedido }}</h3>
+    <p class="order-status-text">Estado: <strong>{{ order.estado }}</strong></p>
+    
+    <div class="order-progress">
+      <div class="step" [class.completed]="order.estado !== 'Pendiente'">
+        <i class="fas fa-desktop"></i>
+        <span>Confirmación</span>
+      </div>
+      <div class="arrow" [class.completed]="order.estado === 'En Preparación' || order.estado === 'Listo para Retiro'">→</div>
+      <div class="step" [class.completed]="order.estado === 'En Preparación' || order.estado === 'Listo para Retiro'">
+        <i class="fas fa-spinner"></i>
+        <span>Preparación</span>
+      </div>
+      <div class="arrow" [class.completed]="order.estado === 'Listo para Retiro'">→</div>
+      <div class="step" [class.completed]="order.estado === 'Listo para Retiro'">
+        <i class="fas fa-check-circle"></i>
+        <span>Listo para retirar</span>
+      </div>
+    </div>
+
+    <!-- Botón para cancelar pedido -->
+    <button *ngIf="order.estado === 'Pendiente'" class="cancel-btn" (click)="cancelOrder(order.id_pedido)">Cancelar Pedido</button>
+  </div>
+</div>
+
+<!-- Si no hay pedidos actuales -->
+<div *ngIf="currentOrders.length === 0" class="no-orders">
+  <p>No tienes pedidos activos.</p>
+</div>
+
+<!-- Pedidos Anteriores -->
+<div *ngIf="previousOrders.length > 0" class="orders-container">
+  <h2 class="orders-title">Pedidos Anteriores</h2>
+
+  <div *ngFor="let order of previousOrders" class="order-status-container">
+    <h3 class="order-id">Pedido #{{ order.id_pedido }}</h3>
+    <p class="order-status-text">Estado: <strong>{{ order.estado }}</strong></p>
+    
+    <div class="order-progress">
+      <div class="step completed">
+        <i class="fas fa-desktop"></i>
+        <span>Confirmación</span>
+      </div>
+      <div class="arrow completed">→</div>
+      <div class="step completed">
+        <i class="fas fa-spinner"></i>
+        <span>Preparación</span>
+      </div>
+      <div class="arrow completed">→</div>
+      <div class="step completed">
+        <i class="fas fa-check-circle"></i>
+        <span>Entregado</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Si no hay pedidos anteriores -->
+<div *ngIf="previousOrders.length === 0" class="no-orders">
+  <p>No tienes pedidos anteriores.</p>
+</div>

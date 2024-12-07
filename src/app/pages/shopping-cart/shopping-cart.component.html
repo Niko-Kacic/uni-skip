@@ -26,15 +26,15 @@
     </thead>
     <tbody>
       <tr *ngFor="let product of cart">
-        <td>{{ product.name }}</td>
-        <td>{{ product.quantity }}</td>
-        <td>${{ product.price }}</td>
-        <td>${{ product.price * product.quantity }}</td>
+        <td>{{ product.nombre }}</td> <!-- Mostrar el nombre del producto -->
+        <td>{{ product.quantity }}</td> <!-- Cantidad -->
+        <td>${{ product.valor }}</td> <!-- Precio unitario -->
+        <td>${{ product.valor * product.quantity }}</td> <!-- Precio total -->
         <td>
           <button class="action-btn add" (click)="addToCart(product)">+</button>
           <button class="action-btn remove" (click)="removeFromCart(product)">-</button>
         </td>
-      </tr>
+      </tr>      
       <tr class="total-row">
         <td colspan="3"><strong>Total:</strong></td>
         <td colspan="2">${{ getTotal() }}</td>

@@ -16,13 +16,22 @@ export class CartService {
   }
 
   addToCart(product: any) {
-    const existingProduct = this.cart.find(item => item.nombre === product.nombre);
+    const existingProduct = this.cart.find(item => item.id_producto === product.id_producto);
     if (existingProduct) {
       existingProduct.quantity += 1;
     } else {
-      this.cart.push({ ...product, quantity: 1 });
+      // Asegurarse de que las propiedades esenciales del producto se copien correctamente
+      this.cart.push({
+        id_producto: product.id_producto,
+        nombre: product.nombre,
+        valor: product.valor,
+        id_tienda: product.id_tienda,
+        es_frio: product.es_frio || false,
+        es_preparado: product.es_preparado || false,
+        quantity: 1 // Cantidad inicial
+      });
     }
-  }
+  }  
 
   removeFromCart(product: any) {
     const existingProduct = this.cart.find(item => item.nombre === product.nombre);
@@ -42,15 +51,16 @@ export class CartService {
     const orders = this.cart.map(product => ({
       hora_pedido: new Date().toISOString(),
       hora_entrega: new Date(Date.now() + 30 * 60 * 1000).toISOString(), // 30 minutos después
-      calentar: product.calentar || false,
+      calentar: product.es_frio || false, // Basado en si el producto es frío
       cantidad: product.quantity,
-      valor: product.valor * product.quantity,
+      valor: product.valor * product.quantity, // Precio total
       estado: 'Pendiente',
       rut_usuario: rut_usuario,
       id_producto: product.id_producto,
       id_tienda: product.id_tienda,
-      id_pago: null // Se puede actualizar más tarde
+      id_pago: null // Se actualiza más adelante
     }));
+  
     return this.http.post(`${this.baseUrl}/orders/confirm`, { orders });
-  }
+  }  
 }

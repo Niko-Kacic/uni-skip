@@ -1,1 +1,38 @@
-<p>store works!</p>
+<div class="store-container">
+  <div class="header-container">
+    <h1>Pedidos - Estado: {{ currentStatus }}</h1>
+    <button class="logout-btn" (click)="logout()">Cerrar Sesión</button>
+  </div>
+
+  <div class="status-buttons">
+    <button (click)="currentStatus = 'Pendiente'; loadOrders()">Pendiente</button>
+    <button (click)="currentStatus = 'En Preparación'; loadOrders()">En Preparación</button>
+    <button (click)="currentStatus = 'Listo para Retiro'; loadOrders()">Listo para Retiro</button>
+  </div>
+
+  <div class="orders" *ngIf="orders.length > 0; else emptyList">
+    <div *ngFor="let order of orders" class="order-card">
+      <h3>Pedido #{{ order.id_pedido }}</h3>
+      <p><strong>Hora Pedido:</strong> {{ order.hora_pedido }}</p>
+      <p><strong>Hora Entrega:</strong> {{ order.hora_entrega }}</p>
+      <p><strong>Calentar:</strong> {{ order.calentar ? 'Sí' : 'No' }}</p>
+      <p><strong>Cantidad:</strong> {{ order.cantidad }}</p>
+      <p><strong>Valor:</strong> ${{ order.valor }}</p>
+      <p><strong>Estado:</strong> {{ order.estado }}</p>
+      <p><strong>Usuario:</strong> {{ order.rut_usuario }}</p>
+      <p><strong>Producto:</strong> {{ order.id_producto }}</p>
+      <p><strong>Tienda:</strong> {{ order.id_tienda }}</p>
+      <p><strong>Pago:</strong> {{ order.id_pago || 'No asignado' }}</p>
+
+      <div class="actions">
+        <button (click)="updateOrderStatus(order.id_pedido, 'En Preparación')">En Preparación</button>
+        <button (click)="updateOrderStatus(order.id_pedido, 'Listo para Retiro')">Listo para Retiro</button>
+        <button class="deliver-btn" (click)="updateOrderStatus(order.id_pedido, 'Entregado')">Entregado</button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #emptyList>
+    <p class="empty-message">No hay pedidos en este estado.</p>
+  </ng-template>
+</div>
