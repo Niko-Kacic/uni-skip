@@ -29,4 +29,8 @@ export class CostumerLoginComponent {
   forgotPassword() {
     this.router.navigate(['/forgot-password']);
   }
+
+  goToRegister() {
+    this.router.navigate(['/register']);
+  }
 }

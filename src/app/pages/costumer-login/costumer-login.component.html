@@ -15,7 +15,7 @@
           <input
             type="text"
             id="email"
-            placeholder="ejemplo@duocuc.cl"
+            placeholder="@duocuc.cl"
             required
             [(ngModel)]="email"
             name="email">
@@ -26,7 +26,7 @@
           <input 
             type="password" 
             id="password" 
-            placeholder="Ingrese su contraseña" 
+            placeholder="**********" 
             required 
             [(ngModel)]="password" 
             name="password">
@@ -35,6 +35,12 @@
         <button type="submit" class="login-btn">Iniciar Sesión</button>
         <a (click)="forgotPassword()" class="forgot-password">¿Olvidaste tu contraseña?</a>
       </form>
+    </div>
+
+    <div class="register-link">
+      <p>¿No tienes una cuenta? 
+        <a (click)="goToRegister()" class="register-btn">Regístrate aquí</a>
+      </p>
     </div>
   </div>
 </div>

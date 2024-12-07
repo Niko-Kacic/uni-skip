@@ -1,0 +1,156 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background: linear-gradient(90deg, #002855, #004080);
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+  }
+  
+  .header-title {
+    font-size: 1.8rem;
+    color: #FFCD00;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .header-title:hover {
+    color: #FFD633;
+    transform: scale(1.1);
+  }
+  
+  .header-icons {
+    display: flex;
+    gap: 1rem; 
+  }
+  
+  .header-icons i {
+    font-size: 1.5rem;
+    color: #FFCD00;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .header-icons i:hover {
+    color: #FFD633;
+    transform: scale(1.1);
+  }
+  
+.header-title:hover {
+  color: #FFD633;
+  transform: scale(1.1);
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: #FFCD00;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+
+  .back-button i {
+    margin-right: 0.5rem;
+  }
+  
+  .back-button:hover {
+    color: #FFD633;
+    transform: scale(1.1);
+  }
+
+  .cart-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .cart-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #002855;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    text-align: center; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  .cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  thead {
+    background: linear-gradient(90deg, #002855, #004080);
+    color: white;
+  }
+  
+  th, td {
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  .action-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .add {
+    background-color: #4CAF50; 
+  }
+  
+  .remove {
+    background-color: #F44336;  
+  }
+  
+  .empty-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #004080;
+  }
+  
+  .total-row {
+    background-color: #004080;
+    color: white;
+    font-size: 1.2rem;
+    text-align: right;
+  }
+  
+  .total-row td {
+    padding: 1rem;
+  }
