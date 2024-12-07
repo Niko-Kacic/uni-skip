@@ -7,8 +7,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./costumer-login.component.scss']
 })
 export class CostumerLoginComponent {
-  email: string = ''; 
-  password: string = ''; 
+  email: string = '';
+  password: string = '';
 
   constructor(private router: Router) {}
 
