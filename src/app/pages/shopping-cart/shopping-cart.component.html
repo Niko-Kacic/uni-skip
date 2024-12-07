@@ -13,36 +13,38 @@
 </div>
 
 <div class="cart-container">
-    <h1 class="cart-title">Carrito de Compras</h1>
-    <table class="cart-table" *ngIf="cart.length > 0; else emptyCart">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Cantidad</th>
-          <th>Precio</th>
-          <th>Total</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let product of cart">
-          <td>{{ product.name }}</td>
-          <td>{{ product.quantity }}</td>
-          <td>${{ product.price }}</td>
-          <td>${{ product.price * product.quantity }}</td>
-          <td>
-            <button class="action-btn add" (click)="addToCart(product)">+</button>
-            <button class="action-btn remove" (click)="removeFromCart(product)">-</button>
-          </td>
-        </tr>
-        <tr class="total-row">
-          <td colspan="3"><strong>Total:</strong></td>
-          <td colspan="2">${{ getTotal() }}</td>
-        </tr>
-      </tbody>
-    </table>
-  
-    <ng-template #emptyCart>
-      <p class="empty-message">El carrito está vacío.</p>
-    </ng-template>
-  </div>
+  <h1 class="cart-title">Carrito de Compras</h1>
+  <table class="cart-table" *ngIf="cart.length > 0; else emptyCart">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Total</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of cart">
+        <td>{{ product.name }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>${{ product.price }}</td>
+        <td>${{ product.price * product.quantity }}</td>
+        <td>
+          <button class="action-btn add" (click)="addToCart(product)">+</button>
+          <button class="action-btn remove" (click)="removeFromCart(product)">-</button>
+        </td>
+      </tr>
+      <tr class="total-row">
+        <td colspan="3"><strong>Total:</strong></td>
+        <td colspan="2">${{ getTotal() }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #emptyCart>
+    <p class="empty-message">El carrito está vacío.</p>
+  </ng-template>
+
+  <button class="checkout-btn" (click)="checkout()">Confirmar Pedido</button>
+</div>

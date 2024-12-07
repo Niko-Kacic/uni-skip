@@ -18,7 +18,7 @@
   </header>
 
   <section class="product-list" *ngIf="products.length > 0; else noProducts">
-    <div class="product-card" *ngFor="let product of products">
+    <div class="product-card" *ngFor="let product of products" (click)="addToCart(product)">
       <h2 class="product-name">{{ product.nombre }}</h2>
       <p class="product-description">{{ product.descripcion }}</p>
       <p class="product-price"><strong>Precio:</strong> ${{ product.valor }}</p>

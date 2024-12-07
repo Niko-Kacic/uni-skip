@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from '../../services/cart.service';
 import { BackendService } from '../../services/backend.service';
 
 @Component({
@@ -15,7 +16,8 @@ export class MenuComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private backendService: BackendService
+    private backendService: BackendService,
+    private cartService: CartService
   ) {}
 
   ngOnInit() {
@@ -26,7 +28,6 @@ export class MenuComponent implements OnInit {
 
   loadProducts(): void {
     const storeIdNumber = parseInt(this.storeId, 10);
-    console.log('ID de tienda para la consulta:', storeIdNumber); // Agregar mensaje de depuración
     this.backendService.getProductsByStore(storeIdNumber).subscribe(
       data => {
         console.log('Productos obtenidos desde el servidor:', data.products);
@@ -41,6 +42,11 @@ export class MenuComponent implements OnInit {
         console.error('Error al obtener productos:', error);
       }
     );
+  }
+
+  addToCart(product: any) {
+    this.cartService.addToCart(product);
+    alert('Producto añadido al carrito');
   }
 
   goToSettings() {

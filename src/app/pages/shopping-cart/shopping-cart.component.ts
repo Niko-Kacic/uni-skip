@@ -6,10 +6,12 @@ import { Location } from '@angular/common';
 @Component({
   selector: 'app-shopping-cart',
   templateUrl: './shopping-cart.component.html',
-  styleUrl: './shopping-cart.component.scss'
+  styleUrls: ['./shopping-cart.component.scss']
 })
 export class ShoppingCartComponent {
   cart: any[] = [];
+  rut_usuario: number = 12345678; // Ejemplo de rut de usuario, ajustar según sea necesario
+
   constructor(private cartService: CartService, private router: Router, private location: Location) {
     this.cart = this.cartService.getCart();
   }
@@ -17,11 +19,26 @@ export class ShoppingCartComponent {
   addToCart(product: any) {
     this.cartService.addToCart(product);
   }
+
   removeFromCart(product: any) {
     this.cartService.removeFromCart(product);
   }
+
   getTotal() {
     return this.cartService.getTotal();
+  }
+
+  checkout() {
+    this.cartService.checkout(this.rut_usuario).subscribe(
+      response => {
+        console.log('Pedido confirmado:', response);
+        alert('Pedido confirmado exitosamente');
+        this.cart = []; // Vaciar el carrito después del checkout
+      },
+      error => {
+        console.error('Error al confirmar el pedido:', error);
+      }
+    );
   }
 
   goToMenu() {
